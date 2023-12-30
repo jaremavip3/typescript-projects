@@ -1,0 +1,26 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+const linked_list_1 = require("./linked-list");
+const linkedList = new linked_list_1.LinkedList();
+linkedList.addNode(1);
+linkedList.addNode(2);
+linkedList.addNode(3);
+linkedList.addNode(4);
+linkedList.addNode(5);
+linkedList.showLinkedList();
+linkedList.searchNode(3);
+linkedList.deleteNode(3);
+linkedList.showLinkedList();
+linkedList.searchNode(3);
+linkedList.showHeadNode();
+linkedList.showTailNode();
+linkedList.deleteNode(1);
+linkedList.deleteNode(2);
+linkedList.deleteNode(4);
+linkedList.deleteNode(5);
+linkedList.showLinkedList();
+linkedList.showHeadNode();
+linkedList.showTailNode();
+linkedList.deleteNode(5);
+linkedList.searchNode(5);
+//# sourceMappingURL=index.js.map
