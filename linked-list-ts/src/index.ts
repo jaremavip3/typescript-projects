@@ -1,25 +1,15 @@
-import {LinkedList} from "./linked-list"
+import {divisors_optimized, divisors_current} from "./count-divisors"
 
-const linkedList = new LinkedList<number>()
-linkedList.addNode(1)
-linkedList.addNode(2)
-linkedList.addNode(3)
-linkedList.addNode(4)
-linkedList.addNode(5)
+const numberToCheck = 100000000
 
-linkedList.showLinkedList()
-linkedList.searchNode(3)
-linkedList.deleteNode(3)
-linkedList.showLinkedList()
-linkedList.searchNode(3)
-linkedList.showHeadNode()
-linkedList.showTailNode()
-linkedList.deleteNode(1)
-linkedList.deleteNode(2)
-linkedList.deleteNode(4)
-linkedList.deleteNode(5)
-linkedList.showLinkedList()
-linkedList.showHeadNode()
-linkedList.showTailNode()
-linkedList.deleteNode(5)
-linkedList.searchNode(5)
+// Вимірюємо час для першого алгоритму
+console.time("Algorithm 1")
+const result1 = divisors_optimized(numberToCheck)
+console.log(result1) // Виводимо результат один раз перед вимірюванням часу
+console.timeEnd("Algorithm 1")
+
+// Вимірюємо час для другого алгоритму
+console.time("Algorithm 2")
+const result2 = divisors_current(numberToCheck)
+console.log(result2) // Виводимо результат один раз перед вимірюванням часу
+console.timeEnd("Algorithm 2")

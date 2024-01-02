@@ -27,34 +27,22 @@ class LinkedList {
     deleteNode(value) {
         let currentNode = this.headNode;
         let previousNode = null;
-        for (let i = 0; i < this.totalNodes; i++) {
+        while (currentNode !== null) {
             if (currentNode.value === value) {
-                // if node found
-                if (this.totalNodes === 1) {
-                    // if only 1 node
-                    this.headNode = null;
-                    this.tailNode = null;
-                    this.totalNodes--;
-                    return console.log("Element " + value + " is deleted");
-                }
-                if (currentNode === this.headNode) {
-                    // if found value is head node
+                if (previousNode === null) {
+                    // If the found value is the head node
                     this.headNode = currentNode.next;
                     if (this.headNode === null) {
                         // If the list is now empty, also update the tail node
                         this.tailNode = null;
                     }
                 }
-                else if (currentNode === this.tailNode) {
-                    // if found value is tail node
-                    this.tailNode = previousNode;
-                    if (this.tailNode !== null) {
-                        this.tailNode.next = null;
-                    }
-                }
                 else {
-                    // if found value is in the middle
                     previousNode.next = currentNode.next;
+                    if (currentNode === this.tailNode) {
+                        // If the found value is the tail node, update the tail node
+                        this.tailNode = previousNode;
+                    }
                 }
                 this.totalNodes--;
                 return console.log("Element " + value + " is deleted");
@@ -62,7 +50,7 @@ class LinkedList {
             previousNode = currentNode;
             currentNode = currentNode.next;
         }
-        return console.log("Element " + value + " is not found "); // if node not found
+        return console.log("Element " + value + " is not found"); // If node is not found
     }
     searchNode(value) {
         let currentNode = this.headNode;
