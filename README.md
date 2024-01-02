@@ -1,0 +1,1 @@
+This is my setup to use TS in Visual Studio Code. As it is kinda painful to do TS only project with dubugging ability in VSC I decided to try make a template project so I can always return here If I need. 
